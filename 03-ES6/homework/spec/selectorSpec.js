@@ -29,6 +29,7 @@ describe("matchFunctionMaker", function() {
     sampleDivEl.id = "price"; // el elemento tiene tres distintas clases en él
     expect(matcher(sampleDivEl)).toEqual(true);
   });
+  
 
   it("debe retoranar una función que devuelve FALSE si el elemento no matchea el ID", function() {
     var selector = "#price";
@@ -68,6 +69,7 @@ describe("matchFunctionMaker", function() {
     var sampleDivEl = document.createElement("div");
     expect(matcher(sampleDivEl)).toEqual(true);
   });
+  
 
   it("debería devolver un función que matchie el TAG.CLASS que devuelva TRUE cuando el elemento matchea el tagName AND Class", function() {
     var selector = "img.thumbnail";
