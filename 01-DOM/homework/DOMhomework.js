@@ -9,7 +9,6 @@ var toDoItems = [];
 var span = document.querySelector("#createdBy");
 span.innerHTML = span.innerHTML + " Claudio";
 
-
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
 // con el nombre 'description' que será justamente la descripción del ToDo.
 // Agregar dos propiedades a la clase:
@@ -17,22 +16,19 @@ span.innerHTML = span.innerHTML + " Claudio";
 // 2) 'complete'    : debe setearse en false
 // Ayuda: usar 'this' en el constructor
 
-function ToDo (description) {
+function ToDo(description) {
   // Tu código acá:
-  this.description = description,
-  this.complete = false
+  (this.description = description), (this.complete = false);
 }
-
 
 // Agregar un método denominado 'completeToDo' al prototipo de la clase ToDo
 // No requiere ningún argumento
 // Debe setear el atributo 'complete' del ToDo en true
 
 // Tu código acá:
-ToDo.prototype.completeToDo = function(){
+ToDo.prototype.completeToDo = function () {
   this.complete = !this.complete;
-  }
-
+};
 
 // Agregar dos parámetros a la función 'buildToDo':
 //    1) Un objeto de la clase ToDo
@@ -51,7 +47,6 @@ ToDo.prototype.completeToDo = function(){
 //    7) Agregar 'toDoText' como hijo de 'toDoShell'
 //    8) Devolver la variable toDoShell
 
-
 function buildToDo(todo, index) {
   // Tu código acá:
   var toDoShell = document.createElement("div");
@@ -60,9 +55,8 @@ function buildToDo(todo, index) {
   var toDoText = document.createElement("span");
   toDoText.innerHTML = todo.description;
   toDoText.id = index;
-  
 
-  if (todo.complete){
+  if (todo.complete) {
     toDoText.className = "completeText";
   }
 
@@ -82,7 +76,6 @@ function buildToDos(toDos) {
   return nuevoArray;
 }
 
-
 // La función 'displayToDos' se va a encargar de que se vean los toDo's en pantalla
 //  1) Seleccionr el elemento cuyo id es 'toDoContainer' y almacenarlo en una variable denominada 'toDoContainer'
 //  2) Setear el innerHTML de 'toDoContainer' como un string vacio ("")
@@ -97,12 +90,11 @@ function displayToDos() {
   var toDoContainer = document.querySelector("#toDoContainer");
   toDoContainer.innerHTML = "";
   var built = buildToDos(toDoItems);
-  
-  for (let i = 0; i < built.length; i++){
+
+  for (let i = 0; i < built.length; i++) {
     toDoContainer.appendChild(built[i]);
   }
 }
-
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
 // [NOTA: Algunas cuestiones a tener en cuenta sobre el elemento 'input' de HTML (Ya que 'toDoInput' es un input)
@@ -116,11 +108,11 @@ function displayToDos() {
 function addToDo() {
   // Tu código acá:
   var input = document.querySelector("#toDoInput");
-  if (input.value !== ""){   
-  var todo = new ToDo(input.value);
-  toDoItems.push(todo);
-  input.value = "";
-  displayToDos();
+  if (input.value !== "") {
+    var todo = new ToDo(input.value);
+    toDoItems.push(todo);
+    input.value = "";
+    displayToDos();
   }
 }
 
@@ -146,17 +138,14 @@ agrega.addEventListener("click", addToDo);
 //      esta función como callback
 
 function completeToDo(event) {
- // DESCOMENTAR LA SIGUIENTE LINEA
- const index = event.target.id;
- // Tu código acá:
- toDoItems[index].completeToDo();
- displayToDos()
-
-
+  // DESCOMENTAR LA SIGUIENTE LINEA
+  const index = event.target.id;
+  // Tu código acá:
+  toDoItems[index].completeToDo();
+  displayToDos();
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
-
 
 // **********************************************EXTRA CREDITOS:********************************************** //
 
@@ -170,14 +159,12 @@ function completeToDo(event) {
 */
 // ********************************************** ----------- ********************************************** //
 
-
 // Acá debes insertar la llamada a 'displayToDos'
 
 displayToDos();
 
-
 // ---------------------------- NO CAMBIES NADA DE ACÁ PARA ABAJO ----------------------------- //
-if (typeof module !== 'undefined') {
+if (typeof module !== "undefined") {
   module.exports = {
     toDoItems: toDoItems,
     ToDo: ToDo,
@@ -185,6 +172,6 @@ if (typeof module !== 'undefined') {
     buildToDo: buildToDo,
     completeToDo: completeToDo,
     displayToDos: displayToDos,
-    addToDo: addToDo
+    addToDo: addToDo,
   };
 }
