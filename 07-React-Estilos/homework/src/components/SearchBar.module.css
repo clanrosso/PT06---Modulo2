@@ -1,0 +1,32 @@
+.contenedor {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: rgba(172, 167, 167, 0.818);
+  box-shadow: 2px 2px 3px;
+}
+
+.input {
+  margin-right: 3px;
+  border-radius: 3px;
+  background-color: rgb(236, 244, 244);
+  padding: 4px;
+  border: none;
+}
+
+.boton {
+  padding: 4px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px rgba(5, 126, 5, 0.976) solid;
+  color: rgba(5, 126, 5, 0.976);
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.boton:hover {
+  background-color: rgba(5, 126, 5, 0.976);
+  color: rgba(172, 167, 167, 0.818);
+}

@@ -1,0 +1,68 @@
+.tarjeta {
+  flex-direction: column;
+  background-color: rgba(207, 214, 214, 0.916);
+  width: 400px;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  box-shadow: 2px 2px 3px;
+  border: 0.5px gray;
+}
+
+.boton {
+  align-self: flex-end;
+  margin: 6px;
+  color: aliceblue;
+  background-color: rgba(192, 60, 60, 0.626);
+  border: none;
+  border-radius: 2px;
+  padding: 4px;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: rgba(164, 38, 38, 0.872);
+}
+
+.titulo {
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: rgb(38, 49, 49);
+}
+
+.subContenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.temperatura {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+  width: 30%;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(38, 49, 49);
+}
+
+.imagen {
+  margin: 1px;
+  width: 30%;
+  height: 100px;
+  float: right;
+}
