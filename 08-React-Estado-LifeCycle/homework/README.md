@@ -16,9 +16,9 @@ No es necesario volver a correr el proyecto cada vez que se realice un cambio si
 
 1. Ya se encuentran copiados los componentes creados en el ejercicio anterior dentro de la carpeta `components`. En el caso de que quieran utilizar los que hicieron ustedes, copiar todos los archivos que se encuentren en la carpeta `components` del ejercicio `07-React-Estilos` a la carpeta `components` pero del ejercicio `08-React-Estado-LifeCycle` sobreescribiendo los que ya se encuentran allí.
 
-  * Card.jsx
-  * Cards.jsx
-  * SearchBar.jsx
+- Card.jsx
+- Cards.jsx
+- SearchBar.jsx
 
 2. Adicionalmente a los componentes que ya teníamos vamos a tener que crear otro denominado `Nav` que va a ser nuestra barra superior de navegación en la cual debemos incluir el componente `SearchBar`. Escribir el código correspondiente en `components/Nav.jsx`. Pueden utilizar como base los [navbars ya definidos de Bootstrap](https://getbootstrap.com/docs/4.4/components/navbar/). El resultado debería ser similar a lo siguiente:
 
@@ -26,8 +26,8 @@ No es necesario volver a correr el proyecto cada vez que se realice un cambio si
   <img src="./img-screen/nav.png" alt="Gif" />
 </p>
 
-* __Recuadro rojo__: Nav
-* __Recuadro verde__: SearchBar
+- **Recuadro rojo**: Nav
+- **Recuadro verde**: SearchBar
 
 Ahora que ya tenemos cada una de las partes de nuestra aplicación procedamos a unirlas. Para ello veamos una imagen del resultado final y pensemos la estrucutra general:
 
@@ -35,15 +35,15 @@ Ahora que ya tenemos cada una de las partes de nuestra aplicación procedamos a 
   <img src="./img-screen/componentes.png" alt="Gif" />
 </p>
 
-  * __Recuadro rojo__: Nav
-  * __Recuadro amarillo__: SearchBar
-  * __Recuadro verde__: Cards
-  * __Recuadro azul__: Card
+- **Recuadro rojo**: Nav
+- **Recuadro amarillo**: SearchBar
+- **Recuadro verde**: Cards
+- **Recuadro azul**: Card
 
-3. Dentro del archivo `App.js` cambiar el contenido que se esta renderizando actualmente `<h1>Título</h1>` por los componentes que deberíamos  mostrar. Recordar que cada una de las tarjetas del clima (`Card`) están incluidas dentro de un componente superior (`Cards`) y que el `SearchBar` se encuentra dentro del `Nav` por lo que solo deberíamos agregar acá los componentes `Nav` y `Cards`.
+3. Dentro del archivo `App.js` cambiar el contenido que se esta renderizando actualmente `<h1>Título</h1>` por los componentes que deberíamos mostrar. Recordar que cada una de las tarjetas del clima (`Card`) están incluidas dentro de un componente superior (`Cards`) y que el `SearchBar` se encuentra dentro del `Nav` por lo que solo deberíamos agregar acá los componentes `Nav` y `Cards`.
 
-  * Importar los componentes que vamos a utilizar
-  * Agregarlos dentro del método render
+- Importar los componentes que vamos a utilizar
+- Agregarlos dentro del método render
 
 ```js
 // App.js
@@ -69,7 +69,7 @@ Inicialmente si nuestro componente Cards no está recibiendo datos de ciudades l
   <img src="./img-screen/barra-busqueda.png" alt="Gif" />
 </p>
 
-*Observen que dentro del componente Cards se está verificando si está recibiendo las cities como prop o no, en el caso de que no las reciba devuelve un mensaje avisando para evitar que surja un error al intentar realizar el map sobre el array vacio*
+_Observen que dentro del componente Cards se está verificando si está recibiendo las cities como prop o no, en el caso de que no las reciba devuelve un mensaje avisando para evitar que surja un error al intentar realizar el map sobre el array vacio_
 
 4. Utilizar el archivo `App.js` para mantener actualizado el listado de ciudades a mostrar. Para ello debemos crearle un estado a este componente donde tengamos el array de ciudades:
 
@@ -153,16 +153,15 @@ export default App;
 ```js
 //SearchBar.jsx
 
-export default function SearchBar({onSearch}) {
+export default function SearchBar({ onSearch }) {
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      onSearch("Cairns");
-    }}>
-      <input
-        type="text"
-        placeholder="Ciudad..."
-      />
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSearch("Cairns");
+      }}
+    >
+      <input type="text" placeholder="Ciudad..." />
       <input type="submit" value="Agregar" />
     </form>
   );
@@ -177,9 +176,9 @@ Llegado a este punto cada vez que le den click al botón de `Agregar` se debe in
 
 10. Modificar la función `onSearch` para que obtenga los datos necesarios desde la API de [openweather](https://openweathermap.org/current). Para ello pueden utilizar `fetch` para hacer la llamada y obtener el resultado. En el caso de que la ciudad no exista deberíamos mostrar un mensaje indicándolo.
 
-__IMPORTANTE__: Para poder realizar las llamadas a la API es necesario contar con una apiKey  que como verán en el código debajo debe ser incluida dentro de la URL. La misma la podemos obtener creando una cuenta en la paǵina de [openweather](https://openweathermap.org/current). Sino consultar con sus PMs si tienen ya una apiKey para darles y que puedan evitar realizar este paso.
+**IMPORTANTE**: Para poder realizar las llamadas a la API es necesario contar con una apiKey que como verán en el código debajo debe ser incluida dentro de la URL. La misma la podemos obtener creando una cuenta en la paǵina de [openweather](https://openweathermap.org/current). Sino consultar con sus PMs si tienen ya una apiKey para darles y que puedan evitar realizar este paso.
 
-*Pueden utilizar sino la siguiente apiKey: '4ae2636d8dfbdc3044bede63951a019b'*
+_Pueden utilizar sino la siguiente apiKey: '4ae2636d8dfbdc3044bede63951a019b'_
 
 ```js
 // App.js
@@ -234,6 +233,7 @@ __IMPORTANTE__: Para poder realizar las llamadas a la API es necesario contar co
     ...
 
 ```
+
 Muestra final de la aplicación funcionando:
 
 <p align="center">

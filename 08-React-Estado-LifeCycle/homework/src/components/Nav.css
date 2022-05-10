@@ -1,3 +1,13 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+  border-radius: 4px;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #logoHenry {
   margin-right: 20px;
 }
