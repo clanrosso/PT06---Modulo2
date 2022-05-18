@@ -1,4 +1,9 @@
-const { INCREMENTO, DECREMENTO } = require("../action-types");
+const {
+  INCREMENTO,
+  DECREMENTO,
+  INCREMENTOIMPAR,
+  INCREMENTOASYNC,
+} = require("../action-types");
 
 const initialState = {
   contador: 0,
@@ -19,6 +24,18 @@ function contador(state = initialState, action) {
       return {
         ...state,
         contador: state.contador - 1,
+      };
+    case INCREMENTOIMPAR:
+      if (state.contador % 2 !== 0) {
+        return {
+          ...state,
+          contador: state.contador + 1,
+        };
+      } else return { ...state };
+    case INCREMENTOASYNC:
+      return {
+        ...state,
+        contador: state.contador + 1,
       };
     default:
       return { ...state };
